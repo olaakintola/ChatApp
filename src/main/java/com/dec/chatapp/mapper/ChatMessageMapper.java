@@ -1,6 +1,6 @@
-package com.udacity.jwdnd.c1.review.mapper;
+package com.dec.chatapp.mapper;
 
-import com.udacity.jwdnd.c1.review.model.ChatMessage;
+import com.dec.chatapp.model.ChatMessage;
 import org.apache.ibatis.annotations.*;
 
 import java.util.List;

@@ -1,6 +1,6 @@
-package com.udacity.jwdnd.c1.review.mapper;
+package com.dec.chatapp.mapper;
 
-import com.udacity.jwdnd.c1.review.model.User;
+import com.dec.chatapp.model.User;
 import org.apache.ibatis.annotations.*;
 
 @Mapper
