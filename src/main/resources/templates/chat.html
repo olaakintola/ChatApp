@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Chat App</title>
+</head>
+<body>
+
+    <form action="#" th:object="${chatForm}" method="POST" th:action="@{'/chat'}">
+<!--      <label for="username">Username:</label>-->
+<!--      <input id="username" type="text" name="username" th:field="*{usernameInput}">-->
+      <label for="messageText">Message Text:</label>
+      <input id="messageText" type="text" name="messageText" th:field="*{messageInput}">
+      <label for="messageType">Message Type: </label>
+      <select id="messageType" name="messageType" th:field="*{mode}">
+        <option selected id="Say" th:value="'Say'">Say</option>
+        <option id="Shout" th:value="'Shout'">Shout</option>
+        <option id="Whisper" th:value="'Whisper'">Whisper</option>
+      </select>
+      <input type="submit">
+    </form>
+
+    <h1 id="chatHistory" th:each="chatter : ${exchanges}" th:text=" ${chatter.usernameInput} + ':' + ' ' + ${chatter.messageInput}" >Hello, homepage!</h1>
+
+<!--    <span th:each="badword : ${badwords}">-->
+<!--    <h1-->
+<!--            th:each="chatter : ${exchanges}" th:text=" ${chatter.usernameInput} + ':' + ' ' + ${chatter.messageInput}"-->
+<!--            th:unless="${chatter.messageInput.contains(badword)}"-->
+<!--    >Hello, homepage!</h1>-->
+<!--    </span>-->
+
+<!--    do i need to add a controller for logout-->
+    <form action="#" th:action="@{/logout}" method="POST">
+        <button id="submit-button" type="submit" class="btn btn-primary">LogOut</button>
+    </form>
+
+</body>
+</html>
